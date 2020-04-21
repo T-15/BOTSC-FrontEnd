@@ -18,7 +18,7 @@ class ApplyForMembership extends Component {
             phone: '',
             date_of_birth: '',
             positions: new Map(),
-            skill_level: '',
+            grade: '',
             division: '',
             referral_method: '',
             referrer: '',
@@ -259,27 +259,27 @@ class ApplyForMembership extends Component {
                                             </label>
                                             <section className="form-group col-md-12">
                                                 <label class="radio radio-inline mr-2">
-                                                    <input type="radio" name="skill_level" id="inlineRadio1" value="1" onChange={this.handleChange}/> 
+                                                    <input type="radio" name="grade" id="inlineRadio1" value="1" onChange={this.handleChange}/> 
                                                     Elite
                                                     <span class="radio-indicator"></span>
                                                 </label>
                                                 <label class="radio radio-inline mr-2">
-                                                    <input type="radio" name="skill_level" id="inlineRadio2" value="2" onChange={this.handleChange}/> 
+                                                    <input type="radio" name="grade" id="inlineRadio2" value="2" onChange={this.handleChange}/> 
                                                     Excellent 
                                                     <span class="radio-indicator"></span>
                                                 </label>
                                                 <label class="radio radio-inline mr-2">
-                                                    <input type="radio" name="skill_level" id="inlineRadio3" value="3" onChange={this.handleChange}/> 
+                                                    <input type="radio" name="grade" id="inlineRadio3" value="3" onChange={this.handleChange}/> 
                                                     Good 
                                                     <span class="radio-indicator"></span>
                                                 </label>
                                                 <label class="radio radio-inline mr-2">
-                                                    <input type="radio" name="skill_level" id="inlineRadio4" value="4" onChange={this.handleChange}/> 
+                                                    <input type="radio" name="grade" id="inlineRadio4" value="4" onChange={this.handleChange}/> 
                                                     Fair 
                                                     <span class="radio-indicator"></span>
                                                 </label>
                                                 <label class="radio radio-inline mr-2">
-                                                    <input type="radio" name="skill_level" id="inlineRadio5" value="5" onChange={this.handleChange}/> 
+                                                    <input type="radio" name="grade" id="inlineRadio5" value="5" onChange={this.handleChange}/> 
                                                     Beginner 
                                                     <span class="radio-indicator"></span>
                                                 </label>
