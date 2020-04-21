@@ -17,7 +17,10 @@ class ApplyForMembership extends Component {
             postal_code: '',
             phone: '',
             birthday: '',
-            positions: new Map(),
+            forward: false,
+            midfield: false,
+            defence: false,
+            goalkeeper: false,
             grade: '',
             division: '',
             referral_method: '',
@@ -74,7 +77,7 @@ class ApplyForMembership extends Component {
     handleCheckChange(e) {
         const item = e.target.name;
         const isChecked = e.target.checked;
-        this.setState(prevState => ({ positions: prevState.positions.set(item, isChecked) }));
+        this.setState({[item]: isChecked});
     }
 
     handleSubmit(e) {
@@ -82,10 +85,24 @@ class ApplyForMembership extends Component {
         e.preventDefault();
 
         var self = this
-        let url = "";
+        let url = "http://localhost:3001/api/v1/utility/application";
 
         axios.post(url, {
-
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            email: this.state.email,
+            postal_code: this.state.postal_code,
+            phone: this.state.phone,
+            birthday: this.state.birthday,
+            forward: this.state.forward,
+            midfield: this.state.midfield,
+            defence: this.state.defence,
+            goalkeeper: this.state.goalkeeper,
+            grade: this.state.grade,
+            division: this.state.division,
+            referral_method: this.state.referral_method,
+            referrer: this.state.referrer,
+            additional_info: this.state.additional_info
         })
         .then(function (response) {
             console.log(response)
@@ -194,7 +211,7 @@ class ApplyForMembership extends Component {
                                                 htmlFor="Date Of Birth">
                                                 Date Of Birth
                                             </label>
-                                            <InputMask mask="9999-99-99" name="phone" value={this.state.birthday} onChange={this.handleChange}>
+                                            <InputMask mask="9999-99-99" name="birthday" value={this.state.birthday} onChange={this.handleChange}>
                                                 {(inputProps) => <input {...inputProps} required placeholder="YYYY-MM-DD" className="form-control" type="text"/>}
                                             </InputMask>
                                         </section>
