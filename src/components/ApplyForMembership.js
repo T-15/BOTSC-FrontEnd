@@ -16,7 +16,7 @@ class ApplyForMembership extends Component {
             email: '',
             postal_code: '',
             phone: '',
-            date_of_birth: '',
+            birthday: '',
             positions: new Map(),
             grade: '',
             division: '',
@@ -194,7 +194,7 @@ class ApplyForMembership extends Component {
                                                 htmlFor="Date Of Birth">
                                                 Date Of Birth
                                             </label>
-                                            <InputMask mask="9999-99-99" name="phone" value={this.state.date_of_birth} onChange={this.handleChange}>
+                                            <InputMask mask="9999-99-99" name="phone" value={this.state.birthday} onChange={this.handleChange}>
                                                 {(inputProps) => <input {...inputProps} required placeholder="YYYY-MM-DD" className="form-control" type="text"/>}
                                             </InputMask>
                                         </section>
