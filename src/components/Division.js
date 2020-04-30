@@ -9,7 +9,7 @@ class Division extends Component {
         super(props);
         this.state = { 
             division: {}
-         }
+        }
     }
 
     componentDidMount() {

@@ -35,13 +35,13 @@ class Primary extends Component {
                                 </li>
                                 {this.props.season ?
                                     <li className="has-children">
-                                        <span class="main-nav__toggle"></span>
+                                        <span className="main-nav__toggle"></span>
                                             <Link to="/season">{this.props.season.year} - Teams</Link>
                                         
                                         <ul className="main-nav__sub">
                                             {this.props.season.divisions.map( division => (
                                                 <li key={division.id} className="has-children">
-                                                    <span class="main-nav__toggle-2"></span>
+                                                    <span className="main-nav__toggle-2"></span>
                                                     <Link to={"/division/" + division.id}>{division.name}</Link>
                                                     <ul className="main-nav__sub-2">
                                                         {division.teams.map( team => (
