@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Helmet from 'react-helmet';
-import NoItems from './application/NoItems';
-import PlayerSmall from './widgets/PlayerSmall';
+import NoItems from '../application/NoItems';
+import TeamCard from '../teams/TeamCard';
 
-class Team extends Component {
+class Division extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            team: {}
+            division: {}
         }
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3001/api/v1/teams/' + this.props.team_id + '/full';
+        const url = 'http://localhost:3001/api/v1/divisions/' + this.props.division_id + '/with_teams_full';
     
         axios.get(url)
         .then((response) => {
           console.log(response)
           this.setState({
-            team: response.data
+            division: response.data
           })
         })
         .catch((error) => {
@@ -30,13 +30,13 @@ class Team extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        const url = 'http://localhost:3001/api/v1/teams/' + newProps.team_id + '/full';
+        const url = 'http://localhost:3001/api/v1/divisions/' + newProps.division_id + '/with_teams_full';
     
         axios.get(url)
         .then((response) => {
           console.log(response)
           this.setState({
-            team: response.data
+            division: response.data
           })
         })
         .catch((error) => {
@@ -50,47 +50,35 @@ class Team extends Component {
         return ( 
             <div>
                 <Helmet>
-                    <title>{"BOTSC | " + this.state.team.name}</title>
+                    <title>{"BOTSC | " + this.state.division.name + " Division"}</title>
                 </Helmet>
                 <div className="page-heading">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-10 offset-md-1">
-                                <h1 className="page-heading__title">{this.state.team.name}</h1>
+                                <h1 className="page-heading__title">{this.state.division.name}<span className="highlight"> Division</span></h1>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="site-content">
                     <div className="container">
-                        {this.state.team.members ?
+                        {this.state.division.teams ?
                             <div className="row">
+                                <h3 className="col-md-12">Teams</h3>
                                 <div className="col-md-12 team-roster team-roster--card-compact js-team-roster--card-compact row">
-                                    {this.state.team.convenor ?
-                                        <div className="content col-lg-4">
-                                            <PlayerSmall 
-                                                player={this.state.team.convenor}
-                                                convenor={true}
+                                    {this.state.division.teams.map( team => (
+                                        <div key={team.id} className="content col-lg-4 col-sm-6">
+                                            <TeamCard
+                                                team={team}
                                             />
                                         </div>
-                                    : null }
-                                    {this.state.team.members.map( player => (
-                                        <>
-                                            {player.id !== this.state.team.convenor.id ?
-                                                <div className="content col-lg-4">
-                                                    <PlayerSmall 
-                                                        player={player}
-                                                        convenor={false}
-                                                    />
-                                                </div>
-                                            : null }
-                                        </>
                                     ))}
                                 </div>
                             </div>
                         :
                             <NoItems
-                                item="Players"
+                                item="Teams"
                             />
                         }
                     </div>
@@ -100,4 +88,4 @@ class Team extends Component {
     }
 }
  
-export default Team;
+export default Division;

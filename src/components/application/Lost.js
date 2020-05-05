@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 import Ghost from '../../images/defaults/icon-ghost.svg';
 
 const Lost = () => {
