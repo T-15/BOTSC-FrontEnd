@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Helmet from 'react-helmet';
-import MemberServiceSingle from './member_service/MemberServiceSingle';
-import NoItems from './application/NoItems';
+import SponsorImageOnly from '../sponsor/SponsorImageOnly';
+import NoItems from '../application/NoItems';
 
-class MemberServices extends Component {
+class Sponsors extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            member_services: []
-         }
+            sponsors: []
+        }
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3001/api/v1/member_services/active';
+        const url = 'http://localhost:3001/api/v1/sponsors/active';
     
         axios.get(url)
         .then((response) => {
           console.log(response)
           this.setState({
-            member_services: response.data
+            sponsors: response.data
           })
         })
         .catch((error) => {
@@ -33,32 +33,32 @@ class MemberServices extends Component {
         return ( 
             <div>
                 <Helmet>
-                    <title>BOTSC | Member Services</title>
+                    <title>BOTSC | Sponsors</title>
                 </Helmet>
                 <div className="page-heading">
                     <div className="container">
                         <div className="row">
                             <div className="col-md-10 offset-md-1">
-                                <h1 className="page-heading__title">Member <span className="highlight"> Services</span></h1>
+                                <h1 className="page-heading__title">Sponsors</h1>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="site-content">
                     <div className="container">
-                        {this.state.member_services.length ?
+                        {this.state.sponsors.length ?
                             <div className="sponsors-grid row">
-                                {this.state.member_services.map( member_service => (
-                                    <div key={member_service.id} className="content col-lg-4 col-sm-6">
-                                        <MemberServiceSingle
-                                            member_service={member_service}
+                                {this.state.sponsors.map( sponsor => (
+                                    <div key={sponsor.id} className="content col-lg-4 col-sm-6">
+                                        <SponsorImageOnly
+                                            sponsor={sponsor}
                                         />
                                     </div>
                                 ))}
                             </div>
-                        : 
-                            <NoItems 
-                                item="Member Services"
+                        :
+                            <NoItems
+                                item="Sponsors"
                             />
                         }
                     </div>
@@ -68,4 +68,4 @@ class MemberServices extends Component {
     }
 }
  
-export default MemberServices;
+export default Sponsors;

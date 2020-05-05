@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Helmet from 'react-helmet';
-import NoItems from './application/NoItems';
-import Leaderboard from './widgets/Leaderboard';
+import NoItems from '../application/NoItems';
+import Leaderboard from '../widgets/Leaderboard';
 
 class Season extends Component {
     constructor(props) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Helmet from 'react-helmet';
-import FieldLocation from './fields/FieldLocation';
-import NoItems from './application/NoItems';
+import FieldLocation from '../fields/FieldLocation';
+import NoItems from '../application/NoItems';
 
 class Fields extends Component {
     constructor(props) {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Helmet from 'react-helmet';
-import AccordionSingle from './accordion/AccordionSingle';
-import NoItems from './application/NoItems';
+import AccordionSingle from '../accordion/AccordionSingle';
+import NoItems from '../application/NoItems';
 
 class Constitution extends Component {
     constructor(props) {

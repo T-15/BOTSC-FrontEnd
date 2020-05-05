@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 import Helmet from 'react-helmet';
-import Form from './member_application/form';
-import FormError from './application/FormError';
-import TermsAndConditions from './application/TermsAndConditions';
+import Form from '../member_application/form';
+import FormError from '../application/FormError';
+import TermsAndConditions from '../application/TermsAndConditions';
 
 class ApplyForMembership extends Component {
     constructor(props) {

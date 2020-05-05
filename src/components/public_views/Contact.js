@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet';
 import $ from 'jquery/dist/jquery';
 // eslint-disable-next-line
 import Slick from 'slick-carousel';
-import MemberSlim from './members/MemberSlim';
-import DefaultImg from '../images/Tinker_Simon_Trans.png';
+import MemberSlim from '../members/MemberSlim';
+import DefaultImg from '../../images/Tinker_Simon_Trans.png';
 
 class Contact extends Component {
     constructor(props) {
