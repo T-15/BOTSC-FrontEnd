@@ -5,7 +5,7 @@ import NoItems from '../application/NoItems';
 import TeamCard from '../teams/TeamCard';
 
 class Division extends Component {
-    constructor(props) {
+    constructor(props, match) {
         super(props);
         this.state = { 
             division: {}
@@ -13,7 +13,7 @@ class Division extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3001/api/v1/divisions/' + this.props.division_id + '/with_teams_full';
+        const url = 'http://localhost:3001/api/v1/public/divisions/' + this.props.division_id + '/with_teams_full';
     
         axios.get(url)
         .then((response) => {
@@ -30,7 +30,7 @@ class Division extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        const url = 'http://localhost:3001/api/v1/divisions/' + newProps.division_id + '/with_teams_full';
+        const url = 'http://localhost:3001/api/v1/public/divisions/' + newProps.division_id + '/with_teams_full';
     
         axios.get(url)
         .then((response) => {

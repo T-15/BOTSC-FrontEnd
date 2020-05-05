@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@reach/router';
 import DefaultImg from '../../images/defaults/sponsor-sample-gray.png';
 
 class TeamCard extends Component {

@@ -13,7 +13,7 @@ class Fields extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3001/api/v1/fields/active';
+        const url = 'http://localhost:3001/api/v1/public/fields/active';
     
         axios.get(url)
         .then((response) => {

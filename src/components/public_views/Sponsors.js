@@ -13,7 +13,7 @@ class Sponsors extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3001/api/v1/sponsors/active';
+        const url = 'http://localhost:3001/api/v1/public/sponsors/active';
     
         axios.get(url)
         .then((response) => {

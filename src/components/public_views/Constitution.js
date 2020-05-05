@@ -14,8 +14,8 @@ class Constitution extends Component {
     }
 
     componentDidMount() {
-        const articlesUrl = 'http://localhost:3001/api/v1/constitution_articles/active';
-        const bylawsUrl = 'http://localhost:3001/api/v1/constitution_by_laws/active';
+        const articlesUrl = 'http://localhost:3001/api/v1/public/constitution_articles/active';
+        const bylawsUrl = 'http://localhost:3001/api/v1/public/constitution_by_laws/active';
     
         axios.get(articlesUrl)
         .then((response) => {

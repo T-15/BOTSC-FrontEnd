@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link } from '@reach/router';
 import Helmet from 'react-helmet';
 import Form from '../member_application/form';
 import FormError from '../application/FormError';
@@ -20,7 +20,7 @@ class ApplyForMembership extends Component {
     }
 
     onSubmit = data => {
-        const url = 'http://localhost:3001/api/v1/utility/application'
+        const url = 'http://localhost:3001/api/v1/public/utility/application'
 
         axios.post(url, {data})
         .then((response) => {
@@ -36,7 +36,7 @@ class ApplyForMembership extends Component {
     }
 
     componentDidMount(){
-        const urlD = 'http://localhost:3001/api/v1/divisions/active';
+        const urlD = 'http://localhost:3001/api/v1/public/divisions/active';
     
         axios.get(urlD)
         .then((response) => {
@@ -50,7 +50,7 @@ class ApplyForMembership extends Component {
             })
         });
 
-        const urlR = 'http://localhost:3001/api/v1/referral_methods';
+        const urlR = 'http://localhost:3001/api/v1/public/referral_methods';
     
         axios.get(urlR)
         .then((response) => {
@@ -64,7 +64,7 @@ class ApplyForMembership extends Component {
             })
         });
 
-        const urlP = 'http://localhost:3001/api/v1/positions/active';
+        const urlP = 'http://localhost:3001/api/v1/public/positions/active';
     
         axios.get(urlP)
         .then((response) => {
