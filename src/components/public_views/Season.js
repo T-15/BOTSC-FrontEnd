@@ -13,7 +13,7 @@ class Season extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3001/api/v1/seasons/active_with_divisions_teams';
+        const url = 'http://localhost:3001/api/v1/public/seasons/active_with_divisions_teams';
     
         axios.get(url)
         .then((response) => {

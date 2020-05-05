@@ -13,7 +13,7 @@ class MemberServices extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3001/api/v1/member_services/active';
+        const url = 'http://localhost:3001/api/v1/public/member_services/active';
     
         axios.get(url)
         .then((response) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router } from "@reach/router";
 import PrivateRoute from './PrivateRoute'
 import '../css/App.css';
 import Lost from './application/Lost';
@@ -28,24 +28,22 @@ function App() {
   return ( 
     <div className="site-wrapper clearfix">
       <div className="site-overlay"></div>
-      <Router primary={false}>
         <Header />
-        <Switch>
-          <Route component={Home} path="/" exact />
-          <Route component={About} path="/about_us" />
-          <Route component={Contact} path="/contact_list" />
-          <Route component={MemberServices} path="/member_services" />
-          <Route component={Sponsors} path="/sponsors" />
-          <Route component={Fields} path="/fields" />
-          <Route component={Constitution} path="/constitution" />
-          <Route component={Season} path="/season" />
-          <Route component={Division} path="/division/:division_id" />
-          <Route component={Team} path="/team/:team_id" />
-          <Route component={ApplyForMembership} path="/apply_for_membership"/>
-          <Route component={Lost} default />
-        </Switch>
+        <Router primary={false}>
+          <Home path="/" />
+          <About path="/about_us" />
+          <Contact path="/contact_list" />
+          <MemberServices path="/member_services" />
+          <Sponsors path="/sponsors" />
+          <Fields path="/fields" />
+          <Constitution path="/constitution" />
+          <Season path="/season" />
+          <Division path="/division/:division_id" />
+          <Team path="/team/:team_id" />
+          <ApplyForMembership path="/apply_for_membership"/>
+          <Lost default />
+        </Router>
         <Footer />
-      </Router>
     </div>
   );
 }

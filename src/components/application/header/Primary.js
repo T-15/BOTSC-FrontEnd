@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import crest from '../../../images/crest-500-trans.png';

@@ -13,7 +13,7 @@ class Header extends Component {
     }
 
     componentDidMount(){
-      const url = 'http://localhost:3001/api/v1/utility/season_menu';
+      const url = 'http://localhost:3001/api/v1/public/utility/season_menu';
   
       axios.get(url)
       .then((response) => {

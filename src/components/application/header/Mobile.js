@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import { Link } from 'react-router-dom';
+import { Link } from '@reach/router';
 import crest from '../../../images/crest-500-trans.png';
 
 class Mobile extends Component {
