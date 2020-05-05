@@ -20,7 +20,7 @@ class ApplyForMembership extends Component {
     }
 
     onSubmit = data => {
-        const url = 'http://localhost:3001/api/v1/public/utility/application'
+        const url = process.env.REACT_APP_API_URL + 'public/utility/application'
 
         axios.post(url, {data})
         .then((response) => {
@@ -36,7 +36,7 @@ class ApplyForMembership extends Component {
     }
 
     componentDidMount(){
-        const urlD = 'http://localhost:3001/api/v1/public/divisions/active';
+        const urlD = process.env.REACT_APP_API_URL + 'public/divisions/active';
     
         axios.get(urlD)
         .then((response) => {
@@ -50,7 +50,7 @@ class ApplyForMembership extends Component {
             })
         });
 
-        const urlR = 'http://localhost:3001/api/v1/public/referral_methods';
+        const urlR = process.env.REACT_APP_API_URL + 'public/referral_methods';
     
         axios.get(urlR)
         .then((response) => {
@@ -64,7 +64,7 @@ class ApplyForMembership extends Component {
             })
         });
 
-        const urlP = 'http://localhost:3001/api/v1/public/positions/active';
+        const urlP = process.env.REACT_APP_API_URL + 'public/positions/active';
     
         axios.get(urlP)
         .then((response) => {

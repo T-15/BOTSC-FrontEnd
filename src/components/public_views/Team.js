@@ -13,7 +13,7 @@ class Team extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3001/api/v1/public/teams/' + this.props.team_id + '/full';
+        const url = process.env.REACT_APP_API_URL + 'public/teams/' + this.props.team_id + '/full';
     
         axios.get(url)
         .then((response) => {
@@ -30,7 +30,7 @@ class Team extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        const url = 'http://localhost:3001/api/v1/public/teams/' + newProps.team_id + '/full';
+        const url = process.env.REACT_APP_API_URL + 'public/teams/' + newProps.team_id + '/full';
     
         axios.get(url)
         .then((response) => {
