@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-// import { Link } from '@reach/router';
+import React from 'react';
 import { Link } from "react-router-dom";
 import { useAuth0 } from "../../../react-auth0-spa";
 
@@ -27,10 +26,18 @@ const TopBar = (props) => {
                             <Link to="/constitution">Constitution</Link>
                         </li>
                         {!isAuthenticated && (
-                            <button onClick={() => loginWithRedirect({})}>Log in</button>
+                            <li className="nav-account__item">
+                                {/* eslint-disable-next-line*/}
+                                <a href="#" onClick={() => loginWithRedirect({})}>Log in</a>
+                            </li>
                         )}
 
-                        {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+                        {isAuthenticated && (
+                            <li className="nav-account__item">
+                                {/* eslint-disable-next-line*/}
+                                <a href="#" onClick={() => logout()}>Log out</a>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </div>

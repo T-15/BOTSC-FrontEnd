@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-// import { Router } from '@reach/router';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from './PrivateRoute'
 import '../css/App.css';
