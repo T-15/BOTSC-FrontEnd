@@ -13,7 +13,7 @@ class Division extends Component {
     }
 
     componentDidMount() {
-        const url = 'http://localhost:3001/api/v1/public/divisions/' + this.props.division_id + '/with_teams_full';
+        const url = process.env.REACT_APP_API_URL + 'public/divisions/' + this.props.division_id + '/with_teams_full';
     
         axios.get(url)
         .then((response) => {
@@ -30,7 +30,7 @@ class Division extends Component {
     }
 
     componentWillReceiveProps(newProps) {
-        const url = 'http://localhost:3001/api/v1/public/divisions/' + newProps.division_id + '/with_teams_full';
+        const url = process.env.REACT_APP_API_URL + 'public/divisions/' + newProps.division_id + '/with_teams_full';
     
         axios.get(url)
         .then((response) => {
