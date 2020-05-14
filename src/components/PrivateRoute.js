@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Route, withRouter } from "react-router-dom";
 import { useAuth0 } from "../react-auth0-spa";
 
 const PrivateRoute = ({ component: Component, path, ...rest }) => {
@@ -18,10 +17,7 @@ const PrivateRoute = ({ component: Component, path, ...rest }) => {
     fn();
   }, [loading, isAuthenticated, loginWithRedirect, path]);
 
-  const render = props =>
-    isAuthenticated === true ? <Component {...props} /> : null;
-
-  return <Route path={path} render={render} {...rest} />;
+  return isAuthenticated === true ? <Component path={path} {...rest} /> : null;;
 };
 
 PrivateRoute.propTypes = {
@@ -33,4 +29,4 @@ PrivateRoute.propTypes = {
   ]).isRequired
 };
 
-export default withRouter(PrivateRoute);
+export default PrivateRoute;
