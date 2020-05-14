@@ -1,10 +1,6 @@
 import React from 'react';
 import { Router } from "@reach/router";
-import PrivateRoute from './PrivateRoute'
-import '../css/App.css';
-import Lost from './application/Lost';
-import Header from './application/header/Header';
-import Footer from './application/footer/Footer';
+import PrivateRoute from './components/PrivateRoute';
 import Home from './public_views/Home';
 import About from './public_views/About';
 import Contact from './public_views/Contact';
@@ -16,19 +12,12 @@ import Season from './public_views/Season';
 import Division from './public_views/Division';
 import Team from './public_views/Team';
 import ApplyForMembership from './public_views/ApplyForMembership';
-import { useAuth0 } from "../react-auth0-spa";
+import AdminDashboard from './private_views/AdminDashboard';
+import Seasons from './private_views/Seasons';
+import Lost from './components/application/Lost';
 
-function App() {
-  const { loading } = useAuth0();
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  return ( 
-    <div className="site-wrapper clearfix">
-      <div className="site-overlay"></div>
-        <Header />
+const Routes = () => {
+    return ( 
         <Router primary={false}>
           <Home path="/" />
           <About path="/about_us" />
@@ -41,11 +30,12 @@ function App() {
           <Division path="/division/:division_id" />
           <Team path="/team/:team_id" />
           <ApplyForMembership path="/apply_for_membership"/>
+
+          <PrivateRoute component={AdminDashboard} path="/admin"/>
+          <PrivateRoute component={Seasons} path="/admin/seasons"/>
           <Lost default />
         </Router>
-        <Footer />
-    </div>
-  );
+    );
 }
  
-export default App;
+export default Routes;

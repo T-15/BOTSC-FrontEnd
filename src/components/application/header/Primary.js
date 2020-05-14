@@ -3,8 +3,11 @@ import { Link } from '@reach/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import crest from '../../../images/crest-500-trans.png';
+import { useAuth0 } from "../../../react-auth0-spa";
 
 function Primary (props) {
+    const { isAuthenticated } = useAuth0();
+
     return (
         <div className="header__primary">
             <div className="container">
@@ -24,6 +27,18 @@ function Primary (props) {
                                     <img src={crest} srcSet={crest} width="148" alt="Alchemists" className="header-mobile__logo-img"/>
                                 </Link>
                             </div>
+                            {isAuthenticated && (
+                                <li className="has-children">
+                                    <span className="main-nav__toggle"></span>
+                                        <Link to="/admin">Admin</Link>
+                                    
+                                    <ul className="main-nav__sub">
+                                        <li>
+                                            <Link to="/admin/seasons">Seasons</Link>
+                                        </li>
+                                    </ul>
+                                </li>
+                            )}
                             <li>
                                 <Link to="/">Home</Link>
                             </li>

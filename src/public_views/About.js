@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import News from '../news/News';
+import News from '../components/news/News';
 
 const About = () => {
     return ( 
