@@ -34,7 +34,7 @@ function Primary (props) {
                                     
                                     <ul className="main-nav__sub">
                                         <li>
-                                            <Link to="/admin/seasons">Sub</Link>
+                                            <Link to="/admin/seasons">Seasons</Link>
                                         </li>
                                     </ul>
                                 </li>
