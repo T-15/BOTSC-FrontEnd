@@ -13,7 +13,7 @@ import Division from './public_views/Division';
 import Team from './public_views/Team';
 import ApplyForMembership from './public_views/ApplyForMembership';
 import AdminDashboard from './private_views/AdminDashboard';
-import Seasons from './private_views/Seasons';
+import Seasons from './private_views/seasons/Index';
 import Lost from './components/application/Lost';
 
 const Routes = () => {
@@ -31,8 +31,11 @@ const Routes = () => {
           <Team path="/team/:team_id" />
           <ApplyForMembership path="/apply_for_membership"/>
 
-          <PrivateRoute component={AdminDashboard} path="/admin"/>
-          <PrivateRoute component={Seasons} path="/admin/seasons"/>
+          <PrivateRoute component={AdminDashboard} path="/admin">
+            <PrivateRoute component={Seasons} path="/seasons">
+            </PrivateRoute>
+          </PrivateRoute>
+          
           <Lost default />
         </Router>
     );
