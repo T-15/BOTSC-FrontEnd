@@ -10,6 +10,7 @@ const TableWithHeader = (props) => {
         <div class="card card--has-table">
             <div class="card__header">
                 <h4>{props.title}</h4>
+                <Link to='new' className="btn btn-primary-inverse btn-xs">New</Link>
             </div>
             <div class="card__content">
                 <div class="table-responsive">

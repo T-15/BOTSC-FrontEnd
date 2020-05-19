@@ -14,6 +14,8 @@ import Team from './public_views/Team';
 import ApplyForMembership from './public_views/ApplyForMembership';
 import AdminDashboard from './private_views/AdminDashboard';
 import Seasons from './private_views/seasons/Index';
+import EditSeason from './private_views/seasons/Edit';
+import NewSeason from './private_views/seasons/New';
 import Lost from './components/application/Lost';
 
 const Routes = () => {
@@ -32,8 +34,9 @@ const Routes = () => {
           <ApplyForMembership path="/apply_for_membership"/>
 
           <PrivateRoute component={AdminDashboard} path="/admin">
-            <PrivateRoute component={Seasons} path="/seasons">
-            </PrivateRoute>
+            <PrivateRoute component={Seasons} path="/seasons"/>
+            <PrivateRoute component={EditSeason} path="/seasons/:seasonId/edit"/>
+            <PrivateRoute component={NewSeason} path="/seasons/new"/>
           </PrivateRoute>
           
           <Lost default />
