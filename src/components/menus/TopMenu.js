@@ -5,8 +5,7 @@ class TopMenu extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            activeKey: null,
-            items: ["seasons", "teams"]
+            activeKey: null
         }
     }
 
@@ -23,7 +22,7 @@ class TopMenu extends Component {
                     {/* eslint-disable-next-line*/}
                     <a href="#" className="content-filter__toggle"></a>
                     <ul className="content-filter__list">
-                        {this.state.items.map( (item, index) => (
+                        {this.props.items.map( (item, index) => (
                             <Item key={index} index={index} item={item}/>
                         ))}
                     </ul>
