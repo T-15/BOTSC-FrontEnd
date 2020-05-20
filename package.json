@@ -15,10 +15,10 @@
     "auth0-js": "^9.13.2",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.1",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -30,6 +30,7 @@
     "react-number-format": "^4.4.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
+    "react-toastify": "^6.0.4",
     "slick-carousel": "^1.8.1"
   },
   "scripts": {
