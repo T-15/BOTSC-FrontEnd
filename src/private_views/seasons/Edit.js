@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 const Edit = (props) => {
     const [season, setSeason] = useState();
     const [isLoading, setIsLoading] = useState(false);
+    const [isErrorMessage, setIsErrorMessage] = useState(false);
     const [isError, setIsError] = useState(false);
     const [errorMessage, setErrorMessage] = useState();
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,6 +50,7 @@ const Edit = (props) => {
     }, [url, getTokenSilently, reset]);
 
     async function onSubmit(season) {
+        setIsErrorMessage(false);
         setIsSubmitting(true);
         try {               
             const token = await getTokenSilently();
@@ -69,7 +71,7 @@ const Edit = (props) => {
 
         } catch (error) {
             setErrorMessage(error.response.data);
-            setIsError(true);
+            setIsErrorMessage(true);
             setIsSubmitting(false);
         }
     }
@@ -86,7 +88,7 @@ const Edit = (props) => {
                         ) : (
                             season ?
                                 <>
-                                    {isError ? 
+                                    {isErrorMessage ? 
                                         Object.keys(errorMessage).map( (item, index) => (
                                             <div key={index} className="alert alert-danger col-12">
                                                 <strong>Error: {item} - </strong>{errorMessage[item]}

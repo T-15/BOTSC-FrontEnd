@@ -7,31 +7,30 @@ const TableWithHeader = (props) => {
     const first = props.items[0];
 
     return ( 
-        <div class="card card--has-table">
-            <div class="card__header">
+        <div className="card card--has-table">
+            <div className="card__header">
                 <h4>{props.title}</h4>
                 <Link to='new' className="btn btn-primary-inverse btn-xs">New</Link>
             </div>
-            <div class="card__content">
-                <div class="table-responsive">
+            <div className="card__content">
+                <div className="table-responsive">
                     {first !== undefined ?
-                        <table class="table table-hover team-schedule">
+                        <table className="table table-hover team-schedule">
                             <thead>
                                 <tr>
-                                    {Object.keys(first).map(k => (
-                                        <th className="text-left">{k}</th>
+                                    {Object.keys(first).map((k, i) => (
+                                        <th key={"header-" + i} className="text-left">{k}</th>
                                     ))}
                                     <th className="text-left">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {props.items.map (item => (
-                                    <tr>
-                                        {Object.keys(item).map(k => (
-                                            <td className="text-left">
-                                                {console.log(item[k])}
+                                {props.items.map ((item, index) => (
+                                    <tr key={"row-" + index}>
+                                        {Object.keys(item).map((k, i) => (
+                                            <td key={"detail-" + i} className="text-left">
                                                 {item[k].hasOwnProperty('url') ? 
-                                                   <figure class="team-meta__logo">
+                                                   <figure className="team-meta__logo">
                                                        <img src={item[k]["url"]} alt=""/>
                                                     </figure> 
                                                 : item[k] === true ?
@@ -42,7 +41,8 @@ const TableWithHeader = (props) => {
                                             </td>
                                         ))}
                                         <td className="text-left">
-                                            <Link to={"/admin/seasons/" + item.id + "/edit"} className="btn btn-warning btn-xs m-1">Edit</Link>
+                                            <Link to={item.id + "/edit"} className="btn btn-primary btn-xs m-1">Edit</Link>
+                                            <Link to={item.id.toString()} className="btn btn-primary btn-xs m-1">Show</Link>
                                         </td>
                                     </tr>
                                 ))}
