@@ -39,26 +39,24 @@ function Index(props) {
     }, [url, getTokenSilently]);
 
     return ( 
-        <div className="site-content">
-            <div className="container">
-                {isLoading ? (
-                    <div>Loading ...</div>
-                ) : (
-                    <>
-                        {isError ? (
-                            <div>Something went wrong ...</div>
-                        ) : (
-                            <div>
-                                <TableWithHeader 
-                                    title={tableTitle}
-                                    items={seasons}
-                                />
-                            </div>
-                        )}
-                    </>
-                )}    
-                {props.children}
-            </div>
+        <div className="container">
+            {isLoading ? (
+                <div>Loading ...</div>
+            ) : (
+                <>
+                    {isError ? (
+                        <div>Something went wrong ...</div>
+                    ) : (
+                        <div>
+                            <TableWithHeader 
+                                title={tableTitle}
+                                items={seasons}
+                            />
+                        </div>
+                    )}
+                </>
+            )}    
+            {props.children}
         </div>
     );
 }
