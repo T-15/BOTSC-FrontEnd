@@ -6,7 +6,7 @@ class Item extends Component {
         super(props);
         this.state = { 
             active: false,
-            itemStripped: props.item.replace(/_/, ' ')
+            itemStripped: props.item.replace(/_/g, ' ')
         }
     }
 
