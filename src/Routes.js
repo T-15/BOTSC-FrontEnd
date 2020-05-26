@@ -13,10 +13,22 @@ import Division from './public_views/Division';
 import Team from './public_views/Team';
 import ApplyForMembership from './public_views/ApplyForMembership';
 import AdminDashboard from './private_views/AdminDashboard';
-import Seasons from './private_views/seasons/Index';
+import ConstitutionArticleIndex from './private_views/constitution_articles/Index';
+import ConstitutionByLawIndex from './private_views/constitution_by_laws/Index';
+import DivisionIndex from './private_views/divisions/Index';
+import FieldIndex from './private_views/fields/Index';
+import MatchIndex from './private_views/matches/Index';
+import MemberServicesIndex from './private_views/member_services/Index';
+import MemberIndex from './private_views/members/Index';
+import PositionIndex from './private_views/positions/Index';
+import ReferralMethodIndex from './private_views/referral_methods/Index';
+import SeasonIndex from './private_views/seasons/Index';
 import EditSeason from './private_views/seasons/Edit';
 import NewSeason from './private_views/seasons/New';
 import ShowSeason from './private_views/seasons/Show';
+import SponsorIndex from './private_views/sponsors/Index';
+import TeamIndex from './private_views/teams/Index';
+import WaitingListIndex from './private_views/waiting_lists/Index';
 import Lost from './components/application/Lost';
 
 const Routes = () => {
@@ -35,10 +47,36 @@ const Routes = () => {
           <ApplyForMembership path="/apply_for_membership"/>
 
           <PrivateRoute component={AdminDashboard} path="/admin">
-            <PrivateRoute component={Seasons} path="/seasons"/>
+
+            <PrivateRoute component={ConstitutionArticleIndex} path="/constitution_articles"/>
+
+            <PrivateRoute component={ConstitutionByLawIndex} path="/constitution_by_laws"/>
+
+            <PrivateRoute component={DivisionIndex} path="/divisions"/>
+
+            <PrivateRoute component={FieldIndex} path="/fields"/>
+
+            <PrivateRoute component={MatchIndex} path="/matches"/>
+
+            <PrivateRoute component={MemberServicesIndex} path="/member_services"/>
+
+            <PrivateRoute component={MemberIndex} path="/members"/>
+
+            <PrivateRoute component={PositionIndex} path="/positions"/>
+
+            <PrivateRoute component={ReferralMethodIndex} path="/referral_methods"/>
+
+            <PrivateRoute component={SeasonIndex} path="/seasons"/>
             <PrivateRoute component={EditSeason} path="/seasons/:seasonId/edit"/>
             <PrivateRoute component={NewSeason} path="/seasons/new"/>
             <PrivateRoute component={ShowSeason} path="/seasons/:seasonId"/>
+
+            <PrivateRoute component={SponsorIndex} path="/sponsors"/>
+
+            <PrivateRoute component={TeamIndex} path="/teams"/>
+
+            <PrivateRoute component={WaitingListIndex} path="/waiting_lists"/>
+
           </PrivateRoute>
           
           <Lost default />

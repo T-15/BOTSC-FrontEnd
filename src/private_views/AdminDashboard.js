@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import TopMenu from '../components/menus/TopMenu';
 import SideMenu from '../components/menus/SideMenu';
 
 const AdminDashboard = (props) => {
@@ -16,7 +15,6 @@ const AdminDashboard = (props) => {
         "referral_methods",
         "seasons",
         "sponsors",
-        "team_members",
         "teams",
         "waiting_lists"
     ];
