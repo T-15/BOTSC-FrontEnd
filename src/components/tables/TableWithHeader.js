@@ -29,9 +29,12 @@ const TableWithHeader = (props) => {
                                     <tr key={"row-" + index}>
                                         {Object.keys(item).map((k, i) => (
                                             <td key={"detail-" + i} className="text-left">
-                                                {item[k].hasOwnProperty('url') ? 
-                                                   <figure className="team-meta__logo">
-                                                       <img src={item[k]["url"]} alt=""/>
+                                                {console.log(item[k])}
+                                                { item[k] === null ?
+                                                    "N/A"
+                                                : item[k].hasOwnProperty('url') ?
+                                                    <figure className="team-meta__logo">
+                                                        <img src={item[k]["url"]} alt=""/>
                                                     </figure> 
                                                 : item[k] === true ?
                                                     <FontAwesomeIcon icon={faCheckCircle} size="2x" className="fa text-success" />
