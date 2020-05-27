@@ -4,12 +4,12 @@ import axios from 'axios';
 import TableWithHeader from "../../components/tables/TableWithHeader";
 
 function Index(props) {
-    const [seasons, setSeasons] = useState([]);
+    const [waiting_Lists, setWaitingLists] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const { getTokenSilently } = useAuth0();
-    const url = process.env.REACT_APP_API_URL + 'private/seasons';
-    const tableTitle = "Seasons";
+    const url = process.env.REACT_APP_API_URL + 'private/waiting_lists';
+    const tableTitle = "Waiting Lists";
 
     useEffect(() => {
         async function fetchData() {
@@ -29,7 +29,7 @@ function Index(props) {
             
                 const responseData = await result.data;
                 setIsLoading(false);
-                setSeasons(responseData);
+                setWaitingLists(responseData);
             } catch (error) {
                 setIsLoading(false);
                 setIsError(true);
@@ -50,7 +50,7 @@ function Index(props) {
                         <div>
                             <TableWithHeader 
                                 title={tableTitle}
-                                items={seasons}
+                                items={waiting_Lists}
                             />
                         </div>
                     )}

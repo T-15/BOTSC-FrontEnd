@@ -38,33 +38,31 @@ const Show = (props) => {
     }, [url, getTokenSilently]);
 
     return ( 
-        <div className="site-content">
-            <div className="container">
-                {isLoading ? (
-                    <div>Loading ...</div>
-                ) : (
-                    <>
-                        {isError ? (
-                            <div>Something went wrong ...</div>
-                        ) : (
-                            season ?
-                                <div className="card bg-light">
-                                    <div className="card-body row">
-                                        <section className="form-group col-md-6">
-                                            <label className="control-label">Year</label>
-                                            <p>{season.year}</p>
-                                        </section>
-                                        <section className="form-group col-md-6">
-                                            <label className="control-label">Name</label>
-                                            <p>{season.name}</p>
-                                        </section>
-                                    </div>
+        <div className="container">
+            {isLoading ? (
+                <div>Loading ...</div>
+            ) : (
+                <>
+                    {isError ? (
+                        <div>Something went wrong ...</div>
+                    ) : (
+                        season ?
+                            <div className="card bg-light">
+                                <div className="card-body row">
+                                    <section className="form-group col-md-6">
+                                        <label className="control-label">Year</label>
+                                        <p>{season.year}</p>
+                                    </section>
+                                    <section className="form-group col-md-6">
+                                        <label className="control-label">Name</label>
+                                        <p>{season.name}</p>
+                                    </section>
                                 </div>
-                            : null
-                        )}
-                    </>
-                )}
-            </div>
+                            </div>
+                        : null
+                    )}
+                </>
+            )}
         </div>
     );
 }

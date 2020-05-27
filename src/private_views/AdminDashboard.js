@@ -1,9 +1,23 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import TopMenu from '../components/menus/TopMenu';
+import SideMenu from '../components/menus/SideMenu';
 
 const AdminDashboard = (props) => {
-    const menuItems = ["seasons", "teams"];
+    const menuItems = [
+        "constitution_articles",
+        "constitution_by_laws",
+        "divisions",
+        "fields",
+        "matches",
+        "member_services",
+        "members",
+        "positions",
+        "referral_methods",
+        "seasons",
+        "sponsors",
+        "teams",
+        "waiting_lists"
+    ];
 
     return ( 
         <div>
@@ -19,8 +33,19 @@ const AdminDashboard = (props) => {
                     </div>
                 </div>
             </div>
-            <TopMenu items={menuItems} />
-            {props.children}
+            <div className="site-content">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-4">
+                            <SideMenu items={menuItems} />
+                        </div>
+
+                        <div className="col-md-8">
+                            {props.children}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
