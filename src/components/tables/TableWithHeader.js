@@ -29,7 +29,6 @@ const TableWithHeader = (props) => {
                                     <tr key={"row-" + index}>
                                         {Object.keys(item).map((k, i) => (
                                             <td key={"detail-" + i} className="text-left">
-                                                {console.log(item[k])}
                                                 { item[k] === null ?
                                                     "N/A"
                                                 : item[k].hasOwnProperty('url') ?

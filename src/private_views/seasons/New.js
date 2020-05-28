@@ -99,7 +99,7 @@ const New = () => {
                                     required: 'This is required',
                                     maxLength: {value: 100, message: "Maximum 100 characters"} })}
                             />
-                            <span id="yearError" style={{ display: errors.year ? "block" : "none" }}>
+                            <span id="nameError" style={{ display: errors.name ? "block" : "none" }}>
                                 {errors.name && <p>{errors.name.message}</p>}
                             </span>
                         </section>

@@ -13,22 +13,39 @@ import Division from './public_views/Division';
 import Team from './public_views/Team';
 import ApplyForMembership from './public_views/ApplyForMembership';
 import AdminDashboard from './private_views/AdminDashboard';
+
 import ConstitutionArticleIndex from './private_views/constitution_articles/Index';
+import NewConstitutionArticle from './private_views/constitution_articles/New';
+import EditConstitutionArticle from './private_views/constitution_articles/Edit';
+import ShowConstitutionArticle from './private_views/constitution_articles/Show';
+
 import ConstitutionByLawIndex from './private_views/constitution_by_laws/Index';
+
 import DivisionIndex from './private_views/divisions/Index';
+
 import FieldIndex from './private_views/fields/Index';
+
 import MatchIndex from './private_views/matches/Index';
+
 import MemberServicesIndex from './private_views/member_services/Index';
+
 import MemberIndex from './private_views/members/Index';
+
 import PositionIndex from './private_views/positions/Index';
+
 import ReferralMethodIndex from './private_views/referral_methods/Index';
+
 import SeasonIndex from './private_views/seasons/Index';
 import EditSeason from './private_views/seasons/Edit';
 import NewSeason from './private_views/seasons/New';
 import ShowSeason from './private_views/seasons/Show';
+
 import SponsorIndex from './private_views/sponsors/Index';
+
 import TeamIndex from './private_views/teams/Index';
+
 import WaitingListIndex from './private_views/waiting_lists/Index';
+
 import Lost from './components/application/Lost';
 
 const Routes = () => {
@@ -49,6 +66,9 @@ const Routes = () => {
           <PrivateRoute component={AdminDashboard} path="/admin">
 
             <PrivateRoute component={ConstitutionArticleIndex} path="/constitution_articles"/>
+            <PrivateRoute component={EditConstitutionArticle} path="/constitution_articles/:constitutionArticleId/edit"/>
+            <PrivateRoute component={NewConstitutionArticle} path="/constitution_articles/new"/>
+            <PrivateRoute component={ShowConstitutionArticle} path="/constitution_articles/:constitutionArticleId"/>
 
             <PrivateRoute component={ConstitutionByLawIndex} path="/constitution_by_laws"/>
 
