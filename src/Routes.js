@@ -27,6 +27,9 @@ import ShowConstitutionByLaw from './private_views/constitution_by_laws/Show';
 import DivisionIndex from './private_views/divisions/Index';
 
 import FieldIndex from './private_views/fields/Index';
+import NewField from './private_views/fields/New';
+import EditField from './private_views/fields/Edit';
+import ShowField from './private_views/fields/Show';
 
 import MatchIndex from './private_views/matches/Index';
 
@@ -81,6 +84,9 @@ const Routes = () => {
             <PrivateRoute component={DivisionIndex} path="/divisions"/>
 
             <PrivateRoute component={FieldIndex} path="/fields"/>
+            <PrivateRoute component={EditField} path="/fields/:fieldId/edit"/>
+            <PrivateRoute component={NewField} path="/fields/new"/>
+            <PrivateRoute component={ShowField} path="/fields/:fieldId"/>
 
             <PrivateRoute component={MatchIndex} path="/matches"/>
 
