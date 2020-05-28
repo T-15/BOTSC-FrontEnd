@@ -20,6 +20,9 @@ import EditConstitutionArticle from './private_views/constitution_articles/Edit'
 import ShowConstitutionArticle from './private_views/constitution_articles/Show';
 
 import ConstitutionByLawIndex from './private_views/constitution_by_laws/Index';
+import NewConstitutionByLaw from './private_views/constitution_by_laws/New';
+import EditConstitutionByLaw from './private_views/constitution_by_laws/Edit';
+import ShowConstitutionByLaw from './private_views/constitution_by_laws/Show';
 
 import DivisionIndex from './private_views/divisions/Index';
 
@@ -71,6 +74,9 @@ const Routes = () => {
             <PrivateRoute component={ShowConstitutionArticle} path="/constitution_articles/:constitutionArticleId"/>
 
             <PrivateRoute component={ConstitutionByLawIndex} path="/constitution_by_laws"/>
+            <PrivateRoute component={EditConstitutionByLaw} path="/constitution_by_laws/:constitutionByLawId/edit"/>
+            <PrivateRoute component={NewConstitutionByLaw} path="/constitution_by_laws/new"/>
+            <PrivateRoute component={ShowConstitutionByLaw} path="/constitution_by_laws/:constitutionByLawId"/>
 
             <PrivateRoute component={DivisionIndex} path="/divisions"/>
 
