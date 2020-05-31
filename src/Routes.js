@@ -41,6 +41,9 @@ import ShowMemberService from './private_views/member_services/Show';
 import MemberIndex from './private_views/members/Index';
 
 import PositionIndex from './private_views/positions/Index';
+import NewPosition from './private_views/positions/New';
+import EditPosition from './private_views/positions/Edit';
+import ShowPosition from './private_views/positions/Show';
 
 import ReferralMethodIndex from './private_views/referral_methods/Index';
 
@@ -101,6 +104,9 @@ const Routes = () => {
             <PrivateRoute component={MemberIndex} path="/members"/>
 
             <PrivateRoute component={PositionIndex} path="/positions"/>
+            <PrivateRoute component={EditPosition} path="/positions/:positionId/edit"/>
+            <PrivateRoute component={NewPosition} path="/positions/new"/>
+            <PrivateRoute component={ShowPosition} path="/positions/:positionId"/>
 
             <PrivateRoute component={ReferralMethodIndex} path="/referral_methods"/>
 
