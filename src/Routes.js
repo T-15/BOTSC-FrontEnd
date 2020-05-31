@@ -56,6 +56,9 @@ import NewSeason from './private_views/seasons/New';
 import ShowSeason from './private_views/seasons/Show';
 
 import SponsorIndex from './private_views/sponsors/Index';
+import EditSponsor from './private_views/sponsors/Edit';
+import NewSponsor from './private_views/sponsors/New';
+import ShowSponsor from './private_views/sponsors/Show';
 
 import TeamIndex from './private_views/teams/Index';
 
@@ -122,6 +125,10 @@ const Routes = () => {
             <PrivateRoute component={ShowSeason} path="/seasons/:seasonId"/>
 
             <PrivateRoute component={SponsorIndex} path="/sponsors"/>
+            <PrivateRoute component={EditSponsor} path="/sponsors/:sponsorId/edit"/>
+            <PrivateRoute component={NewSponsor} path="/sponsors/new"/>
+            <PrivateRoute component={ShowSponsor} path="/sponsors/:sponsorId"/>
+
 
             <PrivateRoute component={TeamIndex} path="/teams"/>
 
