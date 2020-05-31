@@ -34,6 +34,9 @@ import ShowField from './private_views/fields/Show';
 import MatchIndex from './private_views/matches/Index';
 
 import MemberServicesIndex from './private_views/member_services/Index';
+import NewMemberService from './private_views/member_services/New';
+import EditMemberService from './private_views/member_services/Edit';
+import ShowMemberService from './private_views/member_services/Show';
 
 import MemberIndex from './private_views/members/Index';
 
@@ -91,6 +94,9 @@ const Routes = () => {
             <PrivateRoute component={MatchIndex} path="/matches"/>
 
             <PrivateRoute component={MemberServicesIndex} path="/member_services"/>
+            <PrivateRoute component={EditMemberService} path="/member_services/:memberServiceId/edit"/>
+            <PrivateRoute component={NewMemberService} path="/member_services/new"/>
+            <PrivateRoute component={ShowMemberService} path="/member_services/:memberServiceId"/>
 
             <PrivateRoute component={MemberIndex} path="/members"/>
 
