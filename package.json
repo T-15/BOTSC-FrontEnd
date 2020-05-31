@@ -24,7 +24,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
-    "react-hook-form": "^5.5.3",
+    "react-hook-form": "^5.7.2",
     "react-icons": "^3.9.0",
     "react-input-mask": "^2.0.4",
     "react-moment": "^0.9.7",
