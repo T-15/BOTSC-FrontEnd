@@ -46,6 +46,9 @@ import EditPosition from './private_views/positions/Edit';
 import ShowPosition from './private_views/positions/Show';
 
 import ReferralMethodIndex from './private_views/referral_methods/Index';
+import NewReferralMethod from './private_views/referral_methods/New';
+import EditReferralMethod from './private_views/referral_methods/Edit';
+import ShowReferralMethod from './private_views/referral_methods/Show';
 
 import SeasonIndex from './private_views/seasons/Index';
 import EditSeason from './private_views/seasons/Edit';
@@ -109,6 +112,9 @@ const Routes = () => {
             <PrivateRoute component={ShowPosition} path="/positions/:positionId"/>
 
             <PrivateRoute component={ReferralMethodIndex} path="/referral_methods"/>
+            <PrivateRoute component={EditReferralMethod} path="/referral_methods/:referralMethodId/edit"/>
+            <PrivateRoute component={NewReferralMethod} path="/referral_methods/new"/>
+            <PrivateRoute component={ShowReferralMethod} path="/referral_methods/:referralMethodId"/>
 
             <PrivateRoute component={SeasonIndex} path="/seasons"/>
             <PrivateRoute component={EditSeason} path="/seasons/:seasonId/edit"/>
