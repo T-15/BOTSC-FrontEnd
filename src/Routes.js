@@ -25,6 +25,9 @@ import EditConstitutionByLaw from './private_views/constitution_by_laws/Edit';
 import ShowConstitutionByLaw from './private_views/constitution_by_laws/Show';
 
 import DivisionIndex from './private_views/divisions/Index';
+import NewDivision from './private_views/divisions/New';
+import EditDivision from './private_views/divisions/Edit';
+import ShowDivision from './private_views/divisions/Show';
 
 import FieldIndex from './private_views/fields/Index';
 import NewField from './private_views/fields/New';
@@ -94,6 +97,9 @@ const Routes = () => {
             <PrivateRoute component={ShowConstitutionByLaw} path="/constitution_by_laws/:constitutionByLawId"/>
 
             <PrivateRoute component={DivisionIndex} path="/divisions"/>
+            <PrivateRoute component={EditDivision} path="/divisions/:divisionId/edit"/>
+            <PrivateRoute component={NewDivision} path="/divisions/new"/>
+            <PrivateRoute component={ShowDivision} path="/divisions/:divisionId"/>
 
             <PrivateRoute component={FieldIndex} path="/fields"/>
             <PrivateRoute component={EditField} path="/fields/:fieldId/edit"/>
