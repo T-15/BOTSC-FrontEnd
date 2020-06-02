@@ -64,6 +64,9 @@ import NewSponsor from './private_views/sponsors/New';
 import ShowSponsor from './private_views/sponsors/Show';
 
 import TeamIndex from './private_views/teams/Index';
+import EditTeam from './private_views/teams/Edit';
+import NewTeam from './private_views/teams/New';
+import ShowTeam from './private_views/teams/Show';
 
 import WaitingListIndex from './private_views/waiting_lists/Index';
 
@@ -137,6 +140,9 @@ const Routes = () => {
 
 
             <PrivateRoute component={TeamIndex} path="/teams"/>
+            <PrivateRoute component={EditTeam} path="/teams/:teamId/edit"/>
+            <PrivateRoute component={NewTeam} path="/teams/new"/>
+            <PrivateRoute component={ShowTeam} path="/teams/:teamId"/>
 
             <PrivateRoute component={WaitingListIndex} path="/waiting_lists"/>
 
