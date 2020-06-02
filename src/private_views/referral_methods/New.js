@@ -10,7 +10,7 @@ const New = () => {
     const [isError, setIsError] = useState(false);
     const [errorMessage, setErrorMessage] = useState();
     const { getTokenSilently } = useAuth0();
-    const url = process.env.REACT_APP_API_URL + 'private/seasons';
+    const url = process.env.REACT_APP_API_URL + 'private/referral_methods';
     const { register, handleSubmit, errors } = useForm({
         mode: "onBlur"
     });
@@ -19,14 +19,14 @@ const New = () => {
 
     });
 
-    async function onSubmit(season) {
+    async function onSubmit(referral_method) {
         setIsError(false);
         setIsSubmitting(true);
         try {               
             const token = await getTokenSilently();
         
             await axios.post(
-                url, {season},
+                url, {referral_method},
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -34,11 +34,11 @@ const New = () => {
                 }
             );
 
-            toast.success('Season Created!', {
+            toast.success('Referral Method Created!', {
                 progress: undefined
             });
             setIsSubmitting(false);
-            navigate(`/admin/seasons`);
+            navigate(`/admin/referral_methods`);
 
         } catch (error) {
             setErrorMessage(error.response.data);
@@ -59,30 +59,7 @@ const New = () => {
                 : null }
                 <div className="card bg-light">
                     <div className="card-body row">
-                        <section className={ errors.year ? "form-group col-md-4 has-error" : "form-group col-md-4" }>
-                            <label
-                                className="control-label"
-                                htmlFor="Year">
-                                Year
-                            </label>
-                            <input
-                                className="form-control"
-                                type="integer"
-                                name="year"
-                                placeholder="1111"
-                                aria-invalid={errors.year ? "true" : "false"}
-                                aria-describedby="yearError"
-                                ref={register({ 
-                                    required: 'This is required',
-                                    pattern: {value: /[1-2][0-9]{3}/, message: "Must be a valid year"},
-                                    maxLength: {value: 4, message: "Maximum 4 digits"},
-                                    minLength: {value: 4, message: "Minimum 4 digits"} })}
-                            />
-                            <span id="yearError" style={{ display: errors.year ? "block" : "none" }}>
-                                {errors.year && <p>{errors.year.message}</p>}
-                            </span>
-                        </section>
-                        <section className={ errors.name ? "form-group col-md-4 has-error" : "form-group col-md-4" }>
+                        <section className={ errors.name ? "form-group col-md-6 has-error" : "form-group col-md-6" }>
                             <label
                                 className="control-label"
                                 htmlFor="Name">
@@ -99,17 +76,10 @@ const New = () => {
                                     required: 'This is required',
                                     maxLength: {value: 100, message: "Maximum 100 characters"} })}
                             />
-                            <span id="nameError" style={{ display: errors.name ? "block" : "none" }}>
+                            <span id="yearError" style={{ display: errors.year ? "block" : "none" }}>
                                 {errors.name && <p>{errors.name.message}</p>}
                             </span>
                         </section>
-
-                        <input
-                            type="hidden"
-                            name="active"
-                            defaultValue="false"
-                            ref={register({required: true})}
-                        />
                         
                         <div className="form-group col-md-12 text-right mb-0">
                             <button className="btn btn-primary" disabled={isSubmitting} type="submit">
